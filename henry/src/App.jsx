@@ -11,6 +11,7 @@ function App() {
 
   const [arraySearch, setArraySearch] = useState(arraynama);
   const [numbersearch, setnumbers] = useState(arrayNumber);
+  const [hitungsearch, setHitung] = useState(0)
 
   function oninputberubah(data) {
     const text = data.target.value; //mengambil nilai input dari user
@@ -20,6 +21,12 @@ function App() {
     });
     setnumbers(hasilSearch); //hasil dari filter dimasukan ke dalam state "numbersearch" agar terupdate secara realtime
   }
+  function oninputberhitung(data) {
+    const text = data.target.value;
+    const hasilHitung = "hasil dari luas persegi dengan sisi "+(text)+" adalah "+((item) => {
+      return text*text;
+    });
+   }
 
   const tambahNilai = () => {
     setCount(count + 1); //mengupdate state "count" secara realtime
@@ -62,6 +69,23 @@ function App() {
               </h3>
             );
           })}
+          <h3>masukan nilai untuk menghitung luas persegi</h3>
+          <input
+            style= {{ width: "100%" }}
+            type="text"
+            onChange={oninputberhitung}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              alignItems: "flex-star",
+              width: "100%",
+            }}
+          >
+            
+          </div>
         </div>
       </div>
     </div>
