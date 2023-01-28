@@ -1,17 +1,12 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 
-import { FilterArray, Increment } from "./screens";
+import { HomePage, FilterArray, Increment, LuasSegitiga, LuasPersegi } from "./screens";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
+    element: <HomePage />,
   },
   {
     path: "filter",
@@ -21,6 +16,14 @@ const router = createBrowserRouter([
     path: "increment",
     element: <Increment />,
   },
+  {
+    path: "segitiga",
+    element: <LuasSegitiga />,
+  },
+  {
+    path: "persegi",
+    element: <LuasPersegi />
+  }
 ]);
 
 const App = () => {
