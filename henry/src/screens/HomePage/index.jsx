@@ -13,6 +13,7 @@ function App() {
       <Link to="persegi">LuasPersegi</Link>
       <Link to="segitiga">LuasSegitiga</Link>
       <Link to="filter">FIlterArray</Link>
+      <Link to="lingkaran">LuasLingkaran</Link>
     </div>
   );
 }
