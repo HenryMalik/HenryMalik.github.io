@@ -4,5 +4,14 @@ import Increment from "./Increment";
 import LuasSegitiga from "./LuasSegitiga";
 import LuasPersegi from "./LuasPersegi";
 import LuasLingkaran from "./LuasLingkaran";
+import BelajarUseEffect from "./BelajarUseEffect";
 
-export { HomePage, FilterArray, Increment, LuasSegitiga, LuasPersegi, LuasLingkaran };
+export {
+  BelajarUseEffect,
+  HomePage,
+  FilterArray,
+  Increment,
+  LuasSegitiga,
+  LuasPersegi,
+  LuasLingkaran,
+};

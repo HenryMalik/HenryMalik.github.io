@@ -1,7 +1,15 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 
-import { HomePage, FilterArray, Increment, LuasSegitiga, LuasPersegi, LuasLingkaran } from "./screens";
+import {
+  HomePage,
+  FilterArray,
+  Increment,
+  LuasSegitiga,
+  LuasPersegi,
+  LuasLingkaran,
+  BelajarUseEffect,
+} from "./screens";
 
 const router = createBrowserRouter([
   {
@@ -22,12 +30,16 @@ const router = createBrowserRouter([
   },
   {
     path: "persegi",
-    element: <LuasPersegi />
+    element: <LuasPersegi />,
   },
   {
     path: "lingkaran",
-    element: <LuasLingkaran />
-  }
+    element: <LuasLingkaran />,
+  },
+  {
+    path: "belajar-use-effect",
+    element: <BelajarUseEffect />,
+  },
 ]);
 
 const App = () => {
