@@ -20,6 +20,8 @@ const Main = () => {
       });
   };
 
+  const [input, setinput] = useState();
+
   useEffect(() => {
     //jika array [] kosong maka effect akan berjalan sekali setelah render
     networkingTutorial();
@@ -35,6 +37,10 @@ const Main = () => {
       setluaslingkaran(Math.PI * (count * count));
     }
   }, [count]);
+
+  useEffect(() => {
+    console.log("data telah berubah : " + input);
+  }, [input])
 
   return (
     <div>
@@ -66,6 +72,16 @@ const Main = () => {
         {serverError.length > 0 && (
           <h3>Terjadi kesalahan pada server : {serverError}</h3>
         )}
+      </div>
+      <div>
+        <input
+          style={{ width: "100%" }}
+          type="text"
+          onChange={function (data) {
+            const text = data.target.value;
+            setinput(text)
+          }}
+        />
       </div>
     </div>
   );
