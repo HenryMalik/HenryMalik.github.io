@@ -20,7 +20,7 @@ function App() {
                 type="text"
                 onChange={oninputlingkaran}
             />
-            {inputpersegi.length > 0 && (
+            {inputlingkaran.length > 0 && (
                 <h4>
                     hasil dari luas lingkaran dengan jari-jari {inputlingkaran} adalah{" "}
                     {hasillingkaran}
