@@ -8,7 +8,7 @@ function App() {
 
     function oninputlingkaran(data) {
         const text = data.target.value;
-        const hasilHitung = Math.PI * (text * text);
+        const hasilHitung = Math.PI * text * text;
         setinputlingkaran(text);
         sethasillingkaran(hasilHitung);
     }
