@@ -4,8 +4,25 @@ const Main = () => {
   const [count, setCount] = useState(0);
   const [luaspersegi, setLuasPersegi] = useState();
   const [luaslingkaran, setluaslingkaran] = useState();
+  const [tweet, setTweet] = useState([]);
+  const [serverError, setServerError] = useState("");
+
+  const networkingTutorial = () => {
+    fetch("http://127.0.0.1:3000/tweet")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("response dari server ", data);
+        setTweet(data);
+      })
+      .catch((err) => {
+        console.log("terjadi error : " + err);
+        setServerError(err.message);
+      });
+  };
+
   useEffect(() => {
     //jika array [] kosong maka effect akan berjalan sekali setelah render
+    networkingTutorial();
   }, []);
 
   useEffect(() => {
@@ -34,9 +51,24 @@ const Main = () => {
       <h3>
         Luas lingkaran dengan jari-jari {count} adalah {luaslingkaran}
       </h3>
+      <h3>Tweets</h3>
+      <div>
+        {tweet.map((item) => {
+          return (
+            <div>
+              <h5>
+                {item.name} : {item.tweet}
+              </h5>
+            </div>
+          );
+        })}
+
+        {serverError.length > 0 && (
+          <h3>Terjadi kesalahan pada server : {serverError}</h3>
+        )}
+      </div>
     </div>
   );
-
 };
 
 export default Main;
